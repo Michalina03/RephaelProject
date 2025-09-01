@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rephael</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/account.js" defer></script>
+  <script src="js/course.js" defer></script>
+  <link rel="stylesheet" href="scss/main.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">Rephael</div>
+
+      <button class="header__hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+      </button>
+
+      <nav class="header__nav" id="main-menu">
+        <ul class="header__menu">
+          <li class="header__item"><a href="index.html" class="header__link header__link--active">Główna</a></li>
+          <li class="header__item"><a href="about.html" class="header__link">O nas</a></li>
+          <li class="header__item"><a href="index.html#features" class="header__link">Oferta</a></li>
+          <li class="header__item"><a href="contact.html" class="header__link">Kontakt</a></li>
+          <li class="header__item"><a href="account.html" class="header__link">Moje konto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="konto">
+  <div class="konto__wrapper">
+    <h2 class="konto__title">moje konto</h2>
+    <h3 class="konto__subtitle">Twój profil</h3>
+    <nav class="konto__nav">
+      <ul class="konto__menu">
+        <li class="konto__menu-item konto__menu-item--active">Konto</li>
+        <li class="konto__menu-item">Koszyk</li>
+        <li class="konto__menu-item">Moje produkty</li>
+        <li class="konto__menu-item">Zamówienia</li>
+      </ul>
+    </nav>
+    <div class="konto__welcome">
+      <h2>Witaj, <span id="account-username">...</span>!</h2>
+    </div>
+    <section id="content-konto" class="konto__section konto__section--active">
+  <h3 class="konto__subtitle">Moje konto</h3>
+
+  <!-- Dane użytkownika -->
+  <div class="konto__details">
+    <p><strong>Email:</strong> <span id="account-email"></span></p>
+  </div>
+
+  <!-- Formularz zmiany imienia -->
+  <form id="name-change-form" class="konto__form">
+    <label for="newName" class="konto__form-label">Nowe imię i nazwisko</label>
+    <input type="text" name="newName" id="newName" class="konto__form-input" placeholder="Wpisz nowe imię i nazwisko" required>
+    <button type="submit" class="konto__form-btn">Zmień imię</button>
+    <p id="name-change-message" class="konto__form-message"></p>
+  </form>
+
+  <!-- Formularz zmiany emaila -->
+  <form id="email-change-form" class="konto__form">
+    <label for="newEmail" class="konto__form-label">Nowy adres e-mail</label>
+    <input type="email" name="newEmail" id="newEmail" class="konto__form-input" placeholder="Wpisz nowy e-mail" required>
+    <button type="submit" class="konto__form-btn">Zmień email</button>
+    <p id="email-change-message" class="konto__form-message"></p>
+  </form>
+
+  <!-- Formularz zmiany hasła -->
+  <form id="password-change-form" class="konto__form">
+    <label for="currentPassword" class="konto__form-label">Obecne hasło</label>
+    <input type="password" name="currentPassword" id="currentPassword" class="konto__form-input" required>
+
+    <label for="newPassword" class="konto__form-label">Nowe hasło</label>
+    <input type="password" name="newPassword" id="newPassword" class="konto__form-input" required>
+
+    <label for="confirmPassword" class="konto__form-label">Potwierdź nowe hasło</label>
+    <input type="password" name="confirmPassword" id="confirmPassword" class="konto__form-input" required>
+
+    <button type="submit" class="konto__form-btn">Zmień hasło</button>
+    <p id="password-change-message" class="konto__form-message"></p>
+  </form>
+
+  <!-- Wylogowanie -->
+  <button id="logout-btn" class="konto__form-btn konto__form-btn--secondary">Wyloguj</button>
+
+  <!-- Usunięcie konta -->
+  <button id="delete-account-btn" class="konto__form-btn konto__form-btn--danger">Usuń konto</button>
+  <p id="delete-account-message" class="konto__form-message"></p>
+</section>
+
+</div>
+</section>
+
+
+
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__copyright">
+        © 2025 Rephael. Wszystkie prawa zastrzeżone.
+      </p>
+      <div class="footer__social">
+        <!-- Ikony social media -->
+        <a href="https://www.youtube.com/@ZanurzeniwBogu" class="footer__social-link" aria-label="YouTube" title="YouTube">
+          <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">
+            <rect width="24" height="16" x="0" y="4" rx="4" ry="4" fill="currentColor"/>
+            <polygon points="10,8 16,12 10,16" fill="white"/>
+          </svg>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.763v2.312h3.588l-.467 3.622h-3.121V24h6.116C23.406 24 24 23.406 24 22.675V1.325C24 .593 23.406 0 22.675 0z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

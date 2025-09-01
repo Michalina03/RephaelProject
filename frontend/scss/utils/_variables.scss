@@ -1,0 +1,38 @@
+$white: white;
+$black: black;
+$gray:rgba(0, 0, 0, 0.6);
+$blue: rgb(135, 199, 247);
+$blue-dark: darken($blue, 12%);
+$blue-gradient: linear-gradient(135deg, $blue, $blue-dark);
+$font-main: 'Poppins', sans-serif;
+$font-size-title: 3rem;
+$font-size-link: 1rem;
+
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$max-width: 1200px;
+
+$border-radius: 8px;
+$input-border: 1px solid $gray;
+
+$mobile-menu-width:   240px;
+$mobile-menu-z:       1100;
+$mobile-menu-gap:     1.25rem; // ok. 20px
+$transition-time:     0.3s;
+$font-size-base: 1rem;
+$font-size-medium: 1.1rem;
+$font-size-small: 0.9rem;
+
+$button-padding-large: 1.5rem 3rem;
+$button-font-size-large: 1.5rem;
+
+$box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+$success: #2e7d32;         // zielony do pozytywnych komunikatów
+$danger:  #c62828;         // czerwony do błędów
+$focus-ring: rgba($blue, .35);
+
+$space-2: .5rem;
+$space-3: .75rem;
+$space-4: 1rem;
+$space-6: 1.5rem;
+$space-8: 2rem;

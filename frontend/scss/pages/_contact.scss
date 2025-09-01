@@ -1,0 +1,84 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.contact {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 65px;
+
+  &__title {
+    font-size: $font-size-title;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__details {
+    text-align: center;
+    font-size: $font-size-link;
+    margin-bottom: 0.5rem;
+
+    a {
+      color: $blue;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input,
+  &__textarea {
+    padding: 0.75rem 1rem;
+    border: $input-border;
+    border-radius: $border-radius;
+    font-family: $font-main;
+    font-size: 1rem;
+  }
+
+  &__submit {
+    background-color: $blue;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color $transition-time;
+
+    &:hover {
+      background-color: darken($blue, 10%);
+    }
+  }
+
+  @include respond-to(md) {
+    padding: 1.5rem;
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__input,
+    &__textarea {
+      font-size: 0.9rem;
+    }
+  }
+
+  @include respond-to(lg) {
+    padding: 1rem;
+  }
+}

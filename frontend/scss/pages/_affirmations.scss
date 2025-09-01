@@ -1,0 +1,34 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.affirmations {
+  padding: 4rem 2rem;
+  background-color: $white;
+  font-family: $font-main;
+
+  &__container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-size-title;
+    margin-bottom: 2rem;
+    color: $black;
+    text-align: center;
+  }
+
+   &__text {
+    font-size: 1.1rem;
+    line-height: 2; // zwiększony odstęp między linijkami
+    color: $gray;
+    margin-bottom: 1.5rem;
+  }
+
+  &__duration {
+    font-weight: bold;
+    margin-top: 2rem;
+    color: $black;
+    margin-bottom: 1rem; // większy odstęp pod czasem trwania, żeby kursy były niżej ale ładnie
+  }
+}

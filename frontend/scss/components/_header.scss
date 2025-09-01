@@ -1,0 +1,140 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $max-width;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__logo {
+    font-family: $font-main;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $white;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  &__nav {
+    display: block;
+
+    @include respond-to(md) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: $gray;
+      padding-top: 4rem;
+      transform: translateY(-100%);
+      transition: transform $transition-time ease;
+      z-index: $mobile-menu-z;
+
+      &--active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include respond-to(md) {
+      /* pełna wysokość i centrowanie */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      gap: $mobile-menu-gap;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: $font-size-link;
+    color: $white;
+    font-weight: 500;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    transition: color $transition-time ease;
+
+    &:hover {
+      color: $blue;
+    }
+
+    @include respond-to(md) {
+      /* większa czcionka i animacja */
+      font-size: 1.8rem;
+      display: block;
+      text-shadow: none;
+      opacity: 0;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          @include fade-in-up($transition-time, $i * 0.05s);
+        }
+      }
+    }
+
+    /* aktywny link – pozostaje biały */
+    &--active {
+      color: $white;
+
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: $mobile-menu-z + 1;
+
+    &-line {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: $white;
+      margin: 5px 0;
+      border-radius: $border-radius / 4;
+      transition: transform $transition-time ease, opacity $transition-time ease;
+    }
+
+    @include respond-to(md) {
+      display: block;
+    }
+  }
+
+  &__hamburger--active {
+    .header__hamburger-line {
+      &:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      &:nth-child(2) { opacity: 0; }
+      &:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
+  }
+}
+

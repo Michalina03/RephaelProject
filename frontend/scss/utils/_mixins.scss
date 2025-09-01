@@ -1,0 +1,49 @@
+@import "./variables";
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == md {
+    @media (max-width: $breakpoint-md) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) { @content; }
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ @include respond-to(md) {
+    .account {
+      padding: 2rem;
+
+      &__title {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      &__subtitle {
+        font-size: 1.25rem;
+        text-align: center;
+      }
+
+      &__logout {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @include respond-to(lg) {
+    .account {
+      max-width: 90%;
+    }
+  }
+  @mixin fade-in-up($duration: $transition-time, $delay: 0s) {
+  animation: fadeInUp $duration ease forwards;
+  animation-delay: $delay;
+}
