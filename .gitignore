@@ -1,0 +1,14 @@
+# ogólne
+.DS_Store
+*.log
+npm-debug.log*
+dist/
+coverage/
+
+# Node/Backend
+backend/node_modules/
+backend/.env
+
+# Front (jeśli kiedyś użyjesz bundlera)
+frontend/node_modules/
+frontend/.env
