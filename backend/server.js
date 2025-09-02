@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use(session({
-  secret: 'tajny_klucz',
+  secret: '***',
   resave: false,
   saveUninitialized: false,
   cookie: {
@@ -31,8 +31,8 @@ async function sendVerificationEmail(email, token) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "janowska.michalina208@gmail.com",   // Twój email
-      pass: "barl igyd lulp yfoi"                  // Hasło do aplikacji Gmail (app password)
+      user: "***",   // Twój email
+      pass: "***"                  // Hasło do aplikacji Gmail (app password)
     }
   });
 
@@ -52,8 +52,8 @@ async function main() {
   const db = await mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Maryja2208.',
-    database: 'rephael_db'
+    password: '***',
+    database: '***'
   });
 
   // Tworzenie tabel jeśli nie istnieją
